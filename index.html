@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MU CRAZY BLACK - 98+3.0</title>
+
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/616/616408.png">
+
+  <style>
+    :root{
+      --bg:#050505;
+      --bg2:#0b0b0b;
+      --card:#111;
+      --border:#222;
+      --text:#f1f1f1;
+      --muted:#bdbdbd;
+      --red:#ff0000;
+      --red2:#b00000;
+      --green:#00ff6a;
+      --shadow: 0 0 30px rgba(0,0,0,0.75);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    a{text-decoration:none;}
+
+    /* TOP BAR */
+    .topbar{
+      background:#000;
+      border-bottom:1px solid var(--border);
+      padding:10px 15px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:10px;
+      font-size:14px;
+    }
+    .topbar span{color:var(--muted);}
+    .status{color:var(--green);font-weight:bold;}
+
+    /* HEADER */
+    header{
+      background: linear-gradient(to right, #000, #200000, #000);
+      padding:35px 15px;
+      text-align:center;
+      border-bottom:2px solid var(--red);
+    }
+    header h1{
+      font-size:46px;
+      color: var(--red);
+      letter-spacing:2px;
+      text-shadow:0 0 18px rgba(255,0,0,0.4);
+    }
+    header p{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:16px;
+    }
+
+    /* NAV */
+    nav{
+      background: rgba(0,0,0,0.85);
+      border-bottom:1px solid var(--border);
+      position:sticky;
+      top:0;
+      z-index:999;
+      backdrop-filter: blur(8px);
+    }
+    .nav-container{
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
+      padding:14px 10px;
+    }
+    nav a{
+      color: var(--text);
+      font-weight:bold;
+      font-size:14px;
+      padding:10px 14px;
+      border-radius:10px;
+      transition:0.2s;
+      border:1px solid transparent;
+    }
+    nav a:hover{
+      background: var(--red2);
+      border-color: rgba(255,255,255,0.1);
+      box-shadow:0 0 12px rgba(255,0,0,0.25);
+    }
+
+    /* HERO */
+    .hero{
+      min-height:520px;
+      background:
+        linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.35)),
+        url("https://images.wallpapersden.com/image/download/mu-online-fantasy-game_bmZlbG2UmZqaraWkpJRmbmdlrWZlbWU.jpg");
+      background-size:cover;
+      background-position:center;
+      border-bottom:2px solid #111;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:60px 15px;
+      text-align:center;
+    }
+
+    .hero-content{
+      max-width:920px;
+      background: rgba(0,0,0,0.62);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:20px;
+      padding:45px 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-content h2{
+      font-size:42px;
+      color:#fff;
+      text-shadow:0 0 20px black;
+    }
+
+    .hero-content p{
+      margin-top:14px;
+      color:#ddd;
+      font-size:18px;
+      line-height:1.7;
+    }
+
+    .hero-buttons{
+      margin-top:28px;
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 26px;
+      background: var(--red);
+      color:white;
+      font-weight:bold;
+      border-radius:12px;
+      transition:0.2s;
+      box-shadow:0 0 18px rgba(255,0,0,0.35);
+      border:1px solid rgba(255,255,255,0.06);
+    }
+
+    .btn:hover{
+      background: var(--red2);
+      transform: scale(1.05);
+    }
+
+    .btn2{
+      background:#0f0f0f;
+      border:1px solid rgba(255,255,255,0.12);
+      box-shadow:none;
+    }
+
+    .btn2:hover{
+      background:#1a1a1a;
+      transform: scale(1.05);
+    }
+
+    /* SECTION */
+    section{
+      max-width:1200px;
+      margin:auto;
+      padding:60px 15px;
+    }
+
+    section h2{
+      font-size:32px;
+      margin-bottom:20px;
+      color: var(--red);
+      text-shadow:0 0 10px rgba(255,0,0,0.2);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap:18px;
+    }
+
+    .card{
+      background: linear-gradient(to bottom, #0a0a0a, #131313);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:24px;
+      box-shadow:0 0 14px rgba(0,0,0,0.6);
+      transition:0.2s;
+    }
+
+    .card:hover{
+      transform: translateY(-5px);
+      border-color: rgba(255,0,0,0.4);
+      box-shadow:0 0 22px rgba(255,0,0,0.12);
+    }
+
+    .card h3{
+      color:#fff;
+      font-size:20px;
+      margin-bottom:10px;
+    }
+
+    .card p{
+      color: var(--muted);
+      font-size:15px;
+      line-height:1.6;
+    }
+
+    .small{
+      font-size:13px;
+      color:#999;
+      margin-top:10px;
+    }
+
+    /* SHOP */
+    .shop-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap:18px;
+    }
+
+    .shop-item{
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      position:relative;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.95)),
+        url("https://images.wallpapersden.com/image/download/mu-online_bmZlZ2eUmZqaraWkpJRmbmdlrWZlbWU.jpg");
+      background-size:cover;
+      background-position:center;
+    }
+
+    .shop-overlay{
+      padding:25px;
+      height:100%;
+    }
+
+    .price{
+      margin-top:12px;
+      font-size:18px;
+      color: var(--green);
+      font-weight:bold;
+    }
+
+    .buybtn{
+      margin-top:16px;
+      display:inline-block;
+      background: var(--red);
+      padding:12px 20px;
+      border-radius:12px;
+      font-weight:bold;
+      color:white;
+      transition:0.2s;
+    }
+
+    .buybtn:hover{
+      background: var(--red2);
+      transform:scale(1.05);
+    }
+
+    /* TABLE */
+    table{
+      width:100%;
+      border-collapse:collapse;
+      background: var(--bg2);
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    th, td{
+      padding:14px;
+      text-align:left;
+      border-bottom:1px solid var(--border);
+    }
+
+    th{
+      background:#000;
+      color: var(--red);
+    }
+
+    td{
+      color:#ddd;
+      font-size:14px;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#000;
+      border-top:1px solid var(--border);
+      text-align:center;
+      padding:28px 10px;
+      color:#aaa;
+      font-size:14px;
+    }
+
+    .credits{
+      margin-top:8px;
+      font-size:12px;
+      color:#666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <span>🔥 MU CRAZY BLACK | Season 98 +3.0</span>
+    <span>Status: <span class="status">ONLINE</span> | Eventos 24H</span>
+  </div>
+
+  <header>
+    <h1>MU CRAZY BLACK</h1>
+    <p>98 +3.0 | PvP | Reset | Eventos | Hardcore</p>
+  </header>
+
+  <nav>
+    <div class="nav-container">
+      <a href="#home">HOME</a>
+      <a href="#sobre">SOBRE</a>
+      <a href="#downloads">DOWNLOAD</a>
+      <a href="#loja">LOJA</a>
+      <a href="#ranking">RANKING</a>
+      <a href="#regras">REGRAS</a>
+      <a href="#contato">CONTATO</a>
+    </div>
+  </nav>
+
+  <div class="hero" id="home">
+    <div class="hero-content">
+      <h2>O MU MAIS INSANO E SOMBRIO DO BRASIL</h2>
+      <p>
+        Bem-vindo ao <b>MU CRAZY BLACK</b>. Servidor criado para quem gosta de PvP raiz,
+        itens raros, eventos automáticos e evolução rápida.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="btn" href="#downloads">📥 DOWNLOAD</a>
+        <a class="btn btn2" href="cadastro.html">📝 CADASTRO</a>
+        <a class="btn btn2" href="ranking.html">🏆 RANKING</a>
+      </div>
+
+      <p class="small">⚠️ Site hospedado grátis no GitHub Pages</p>
+    </div>
+  </div>
+
+  <section id="sobre">
+    <h2>⚔️ Sobre o Servidor</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🔥 PvP Insano</h3>
+        <p>Servidor feito para guerra de guild e PvP intenso em todos os mapas.</p>
+      </div>
+
+      <div class="card">
+        <h3>💀 Drops Raros</h3>
+        <p>Itens raros e exclusivos para manter o comércio e o farm sempre ativo.</p>
+      </div>
+
+      <div class="card">
+        <h3>⚡ Reset Balanceado</h3>
+        <p>Reset rápido com sistema progressivo e competitivo.</p>
+      </div>
+
+      <div class="card">
+        <h3>🎯 Eventos 24H</h3>
+        <p>Blood Castle, Devil Square, Chaos Castle e eventos automáticos com premiação.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="downloads">
+    <h2>📥 Downloads</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Cliente Completo</h3>
+        <p>Cliente completo do MU CRAZY BLACK (recomendado).</p>
+        <a class="btn" href="#" target="_blank">Baixar Cliente</a>
+      </div>
+
+      <div class="card">
+        <h3>Launcher Oficial</h3>
+        <p>Atualizações automáticas e conexão rápida.</p>
+        <a class="btn" href="#" target="_blank">Baixar Launcher</a>
+      </div>
+
+      <div class="card">
+        <h3>Patch Atualizado</h3>
+        <p>Atualização rápida para corrigir erros e melhorar performance.</p>
+        <a class="btn" href="#" target="_blank">Baixar Patch</a>
+      </div>
+    </div>
+
+    <p class="small">📌 Troque os links acima pelo seu MediaFire / Drive.</p>
+  </section>
+
+  <section id="loja">
+    <h2>🛒 Loja de Itens / VIP</h2>
+
+    <div class="shop-grid">
+      <div class="shop-item">
+        <div class="shop-overlay">
+          <h3>💎 VIP GOLD</h3>
+          <p>XP + Drop + benefícios exclusivos para jogadores VIP.</p>
+          <p class="price">R$ 19,90</p>
+          <a class="buybtn" href="#" target="_blank">Comprar VIP</a>
+        </div>
+      </div>
+
+      <div class="shop-item">
+        <div class="shop-overlay">
+          <h3>🪙 10.000 COINS</h3>
+          <p>Coins para usar na loja dentro do jogo e trocar por itens raros.</p>
+          <p class="price">R$ 29,90</p>
+          <a class="buybtn" href="#" target="_blank">Comprar Coins</a>
+        </div>
+      </div>
+
+      <div class="shop-item">
+        <div class="shop-overlay">
+          <h3>🪽 Asa +13</h3>
+          <p>Asa rara +13 com opção para PvP e farm.</p>
+          <p class="price">R$ 39,90</p>
+          <a class="buybtn" href="#" target="_blank">Comprar Asa</a>
+        </div>
+      </div>
+
+      <div class="shop-item">
+        <div class="shop-overlay">
+          <h3>🔥 Full Set +13</h3>
+          <p>Pacote Full Set +13 com opção para dominar o servidor.</p>
+          <p class="price">R$ 49,90</p>
+          <a class="buybtn" href="#" target="_blank">Comprar Full</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="small">⚠️ Se quiser, eu monto um sistema de compra por Pix com confirmação.</p>
+  </section>
+
+  <section id="ranking">
+    <h2>🏆 Ranking (Exemplo)</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nick</th>
+          <th>Classe</th>
+          <th>Reset</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>CRAZYKING</td>
+          <td>Blade Knight</td>
+          <td>150</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>BLACKQUEEN</td>
+          <td>Soul Master</td>
+          <td>143</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>FENRIR</td>
+          <td>Magic Gladiator</td>
+          <td>138</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>DEMON</td>
+          <td>Dark Lord</td>
+          <td>129</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>CRAZYFURY</td>
+          <td>Fairy Elf</td>
+          <td>120</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="small" style="margin-top:12px;">
+      📌 Depois podemos ligar o ranking real puxando do banco SQL.
+    </p>
+  </section>
+
+  <section id="regras">
+    <h2>📜 Regras do Servidor</h2>
+    <div class="card">
+      <p>🚫 Proibido hack, macro, cheat engine e bug abuse.</p>
+      <p>🚫 Flood e ofensas graves geram mute/ban.</p>
+      <p>⚔️ PvP liberado, porém respeite eventos e áreas seguras.</p>
+      <p>💀 A staff pode banir qualquer conta suspeita.</p>
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2>📞 Contato</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>📲 WhatsApp</h3>
+        <p>Entre no grupo oficial e fale com a staff.</p>
+        <a class="btn" href="#" target="_blank">Entrar no WhatsApp</a>
+      </div>
+
+      <div class="card">
+        <h3>🎧 Discord</h3>
+        <p>Comunidade MU CRAZY BLACK (eventos e suporte).</p>
+        <a class="btn" href="#" target="_blank">Entrar no Discord</a>
+      </div>
+
+      <div class="card">
+        <h3>🛡️ Suporte / Compras</h3>
+        <p>Fale direto com a administração para VIP e itens.</p>
+        <a class="btn" href="#" target="_blank">Falar com Admin</a>
+      </div>
+    </div>
+
+    <p class="small" style="margin-top:12px;">
+      📌 Troque os links por WhatsApp e Discord real.
+    </p>
+  </section>
+
+  <footer>
+    © 2026 MU CRAZY BLACK - Todos os direitos reservados.
+    <div class="credits">Site criado para MU 98+3.0 | GitHub Pages</div>
+  </footer>
+
+</body>
+</html>
